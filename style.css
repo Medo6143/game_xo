@@ -1,0 +1,43 @@
+.game {
+    width: 280px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:white;
+    margin: auto ;
+
+}
+body{
+    background-color: rgb(172, 41, 113);
+
+}
+
+.title {
+    background-color: #f25;
+    padding: 5px;
+    margin: 5px;
+    font-weight: bolderf;
+}
+
+span {
+    color: #fa0;
+    margin-left: 6px;
+}
+
+.game .squar {
+    background-color:#f25;
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin: 2px;
+    font-size: 50px;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+.squar:hover{
+    background-color: rgb(70, 56, 56);
+}
+
+.squar:active{
+    background-color: violet;
+}
