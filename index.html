@@ -12,13 +12,13 @@
     <div class="result">
         
     </div>
+    <div class="score">
+        <p>Player X:<span id="playerX">0</span></p>
+        <p>Player O:<span id="playerO">0</span></p>
+    </div>
     <div class="container">
-        <div class="score">
-            <p>Player X:<span id="playerX">0</span></p>
-            <p>Player O:<span id="playerO">0</span></p>
-        </div>
         <div class="game">
-
+            
             <div class="squar" id="item1" onclick="game(this.id)"></div>
             <div class="squar" id="item2" onclick="game(this.id)"></div>
             <div class="squar" id="item3" onclick="game(this.id)"></div>
@@ -30,8 +30,9 @@
             <div class="squar" id="item7" onclick="game(this.id)"></div>
             <div class="squar" id="item8" onclick="game(this.id)"></div>
             <div class="squar" id="item9" onclick="game(this.id)"></div>
+
+
         </div>
-        <button onclick="nextGame()">next</button>
     </div>
 
     <script src="script.js"></script>
