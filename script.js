@@ -1,10 +1,21 @@
 let turn = "x";
 let tiitle = document.querySelector(".title");
+let player_X = 0;
+let player_O = 0;
 let squarss = [];
 
+
+
+// creat the lin3
+let line = document.createElement("div");
+line.classList.add("line");
+document.querySelector(".game").appendChild(line)
+let style_line =document.querySelector(".line");
+
+
+// the game
 function game(id) {
   let squar = document.getElementById(id);
-
   if (turn === "x" && squar.innerHTML == "") {
     squar.innerHTML = "x";
     style_line.style.boxShadow = "0 0 10px #004de8, 0 0 40px #004de8, 0 0 40px #004de8, 0 0 80px #004de8, 0 0 180px #004de8";    
@@ -17,7 +28,6 @@ function game(id) {
     tiitle.innerHTML = "Turn{X}";
     style_line.style.boxShadow = "0 0 10px #F56B93, 0 0 40px #F56B93, 0 0 40px #F56B93, 0 0 80px #F56B93, 0 0 180px #F56B93, 0 0 300px #F56B93";
     squar.setAttribute("style"," text-shadow: 0 0 10px #F56B93, 0 0 40px #F56B93, 0 0 40px #F56B93,0 0 80px #F56B93 , 0 0 180px #F56B93;")
-
   }
   check_winnner();
 }
@@ -35,14 +45,14 @@ function check_winnner() {
     squarss[1] != ""
   ) {
     win(1, 2, 3);
-    style_line.setAttribute("style","width: 340px; height: 4px; background-color: #fff; position: absolute; top: 25%")
+    style_line.setAttribute("style","width: 340px; height: 4px; background-color: #fff; position: absolute; top: 29%")
   } else if (
     squarss[4] == squarss[5] &&
     squarss[5] == squarss[6] &&
     squarss[6] != ""
   ) {
     win(4, 5, 6);
-    style_line.setAttribute("style","width: 340px; height: 4px; background-color: #fff; position: absolute; top: 39%")
+    style_line.setAttribute("style","width: 340px; height: 4px; background-color: #fff; position: absolute; top: 43%")
 
   } else if (
     squarss[7] == squarss[8] &&
@@ -50,7 +60,7 @@ function check_winnner() {
     squarss[8] != ""
   ) {
     win(7, 8, 9);
-    style_line.setAttribute("style","width: 340px; height: 4px; background-color: #fff; position: absolute; top: 52%")
+    style_line.setAttribute("style","width: 340px; height: 4px; background-color: #fff; position: absolute; top: 57%")
 
   }
   //check length
@@ -60,7 +70,7 @@ function check_winnner() {
     squarss[4] != ""
   ) {
     win(1, 4, 7);
-    style_line.setAttribute("style","width: 4px; height: 310px; background-color: #fff; position: absolute; right:57%; ")
+    style_line.setAttribute("style","width: 4px; height: 330px; background-color: #fff; position: absolute; right:57%; ")
   } else if (
     squarss[2] == squarss[5] &&
     squarss[5] == squarss[8] &&
@@ -75,7 +85,7 @@ function check_winnner() {
     squarss[9] != ""
   ) {
     win(3, 6, 9);
-    style_line.setAttribute("style","width: 4px; height: 310px; background-color: #fff; position: absolute; right:43%; ")
+    style_line.setAttribute("style","width: 4px; height: 330px; background-color: #fff; position: absolute; right:42.7%; ")
 
   } else if (
     squarss[3] == squarss[5] &&
@@ -83,7 +93,7 @@ function check_winnner() {
     squarss[5] != ""
   ) {
     win(3, 5, 7);
-    style_line.setAttribute("style","width: 430px; height: 4px; background-color: #fff; position: absolute; top: 39%; left: 36%; transform: rotate(-42deg); text-align: center;")
+    style_line.setAttribute("style","width: 445px; height: 4px; background-color: #fff; position: absolute; top: 44%; left: 36%; transform: rotate(-45deg); text-align: center;")
 
   } else if (
     squarss[1] == squarss[5] &&
@@ -91,57 +101,68 @@ function check_winnner() {
     squarss[5] != ""
   ) {
     win(1, 5, 9);
-    style_line.setAttribute("style","width: 430px; height: 4px; background-color: #fff; position: absolute; top: 39%; left: 36%; transform: rotate(42deg); text-align: center;")
+    style_line.setAttribute("style","width: 445px; height: 4px; background-color: #fff; position: absolute; top: 44%; left: 36%; transform: rotate(45deg); text-align: center;")
+  }else{  
+  // fair game 
+  let isBoardFull = squarss.every(square => square !== "");
+  if (isBoardFull) {
+    tiitle.innerHTML = "Fair";
+    setTimeout(() => resetGame(), 2000);
+  }
   }
 }
 //add the score of game
 
-let player_X = 0;
-let player_O = 0;
 
 //who is win
 
 function win(nam1, nam2, nam3) {
   if (squarss[nam1] == "x") {
     player_X++;
+    turn = "x"
     document.querySelector("#playerX").innerHTML = player_X;
   } else {
+    turn="o"
     player_O++;
     document.querySelector("#playerO").innerHTML = player_O;
   }
   tiitle.innerHTML = `${squarss[nam1]} winner`;
-
-  
-/////////
+    
+// squar disable
   for (let i = 1; i < 10; i++) {
     squarss[i] = document.getElementById("item" + i).innerHTML;
     document.getElementById("item" + i).classList.add('disabled-square');
 
   }
-   
-  // setInterval(() =>tiitle.innerHTML += ".",1000);
-
-  setTimeout(() => {
-    for (let i = 1; i < 10; i++) {
-      squarss[i] = document.getElementById("item" + i).innerHTML;
-      squarss.length = 0;
-      document.getElementById("item" + i).innerText = "";
-      document.getElementById("item" + i).style.backgroundColor ="#020236";
-      document.getElementById("item" + i).classList.remove('disabled-square'); 
-    }
-    line.classList.remove("line")
-    style_line.setAttribute("style","width:0,height:0")
-  }, 4000);
-///////
-
-
-
-
+  setTimeout(resetGame, 4000);
 }
 
 
 
-let line = document.createElement("div");
-line.classList.add("line");
-document.querySelector(".game").appendChild(line)
-let style_line =document.querySelector(".line");
+
+
+function resetGame(){
+  for (let i = 1; i < 10; i++) {
+    squarss[i] = document.getElementById("item" + i).innerHTML;
+    squarss.length = 0;
+    document.getElementById("item" + i).innerText = "";
+    document.getElementById("item" + i).style.backgroundColor ="#020236";
+    document.getElementById("item" + i).classList.remove('disabled-square'); 
+  }
+  line.classList.remove("line")
+  style_line.setAttribute("style","width:0,height:0")
+}
+
+
+function restart (){
+  for (let i = 1; i < 10; i++) {
+    squarss[i] = document.getElementById("item" + i).innerHTML;
+    squarss.length = 0;
+    document.getElementById("item" + i).innerText = "";
+    document.getElementById("item" + i).style.backgroundColor ="#020236";
+    document.getElementById("item" + i).classList.remove('disabled-square'); 
+  }
+  line.classList.remove("line")
+  style_line.setAttribute("style","width:0,height:0")
+  }
+
