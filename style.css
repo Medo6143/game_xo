@@ -129,21 +129,38 @@ footer {
 
 #button{
   text-align: center;
-  
 }
 
 
 button{
-
   margin-top: 3rem;
   padding: 20px;
   border-radius: 8px;
-  background-color: rgb(10, 10, 155);
-  border-color: blue;
+  background-color: rgb(35, 35, 1255);
+  border-color: rgb(35, 35, 255);
   font-size: 15px;
   font-family: serif;
   font-weight: bold;
   border-width: 8px;
   color: #fff;
   width: 150px;
+}
+
+
+
+/* style on mobile */
+
+@media only screen and (max-width: 600px) {
+  body{
+    background-color: #02025e;
+
+  }
+
+  #line{
+    display: none;
+  }
+
+  #color_win{
+    background-color: rgb(12, 12, 168);
+  }
 }

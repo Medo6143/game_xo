@@ -6,9 +6,10 @@ let squarss = [];
 
 
 
-// creat the lin3
+// creat the line
 let line = document.createElement("div");
 line.classList.add("line");
+line.id ="line"
 document.querySelector(".game").appendChild(line)
 let style_line =document.querySelector(".line");
 
@@ -127,6 +128,14 @@ function win(nam1, nam2, nam3) {
     document.querySelector("#playerO").innerHTML = player_O;
   }
   tiitle.innerHTML = `${squarss[nam1]} winner`;
+
+  if(window.innerWidth<=600){
+    document.getElementById("item" + nam1).style.background = "rgb(12, 12, 168)";
+    document.getElementById("item" + nam2).style.background = "rgb(12, 12, 168)";
+    document.getElementById("item" + nam3).style.background = "rgb(12, 12, 168)";
+  }
+
+
     
 // squar disable
   for (let i = 1; i < 10; i++) {
@@ -135,6 +144,8 @@ function win(nam1, nam2, nam3) {
 
   }
   setTimeout(resetGame, 4000);
+
+  
 }
 
 
@@ -166,3 +177,5 @@ function restart (){
   style_line.setAttribute("style","width:0,height:0")
   }
 
+
+  
