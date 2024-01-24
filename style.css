@@ -23,6 +23,7 @@
   border-radius: 15px;
   background-color: #02025e;
   margin: auto;
+  
 }
 
 body {
@@ -63,6 +64,8 @@ span {
   padding: 5px;
   font-weight: bold;
   border-radius: 10px;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);
+
 }
 
 @keyframes rotateX {
