@@ -147,14 +147,24 @@ button{
 }
 
 
+/* box-shawow */
+
+.shadow_x{
+    box-shadow:0 0 10px #004de8, 0 0 40px #004de8, 0 0 40px #004de8, 0 0 80px #004de8, 0 0 180px #004de8 ;
+}
+
+.shadow_o{
+  box-shadow: 0 0 10px #F56B93, 0 0 40px #F56B93, 0 0 40px #F56B93, 0 0 80px #F56B93, 0 0 180px #F56B93, 0 0 300px #F56B93;
+}
+
+
+
+
 
 /* style on mobile */
 
 @media only screen and (max-width: 600px) {
-  body{
-    background-color: #02025e;
 
-  }
 
   #line{
     display: none;

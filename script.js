@@ -19,7 +19,8 @@ function game(id) {
   let squar = document.getElementById(id);
   if (turn === "x" && squar.innerHTML == "") {
     squar.innerHTML = "x";
-    style_line.style.boxShadow = "0 0 10px #004de8, 0 0 40px #004de8, 0 0 40px #004de8, 0 0 80px #004de8, 0 0 180px #004de8";    
+    //line and box-shadow
+    // line.classList.add("shadow_x")
     squar.setAttribute("style","text-shadow: 0 0 10px #004de8, 0 0 40px #004de8, 0 0 40px #004de8, 0 0 80px #004de8 , 0 0 180px #004de8; ")
     turn = "o";
     tiitle.innerHTML = "Turn{O}";
@@ -27,7 +28,9 @@ function game(id) {
     squar.innerHTML = "o";
     turn = "x";
     tiitle.innerHTML = "Turn{X}";
-    style_line.style.boxShadow = "0 0 10px #F56B93, 0 0 40px #F56B93, 0 0 40px #F56B93, 0 0 80px #F56B93, 0 0 180px #F56B93, 0 0 300px #F56B93";
+    
+    //line and box-shadow
+    // line.classList.add("shadow_o")    
     squar.setAttribute("style"," text-shadow: 0 0 10px #F56B93, 0 0 40px #F56B93, 0 0 40px #F56B93,0 0 80px #F56B93 , 0 0 180px #F56B93;")
   }
   check_winnner();
@@ -119,10 +122,12 @@ function check_winnner() {
 
 function win(nam1, nam2, nam3) {
   if (squarss[nam1] == "x") {
+    line.classList.add("shadow_x")
     player_X++;
     turn = "x"
     document.querySelector("#playerX").innerHTML = player_X;
   } else {
+    line.classList.add("shadow_o")    
     turn="o"
     player_O++;
     document.querySelector("#playerO").innerHTML = player_O;
@@ -161,6 +166,8 @@ function resetGame(){
     document.getElementById("item" + i).classList.remove('disabled-square'); 
   }
   line.classList.remove("line")
+  line.classList.remove("shadow_x")
+  line.classList.remove("shadow_o")
   style_line.setAttribute("style","width:0,height:0")
 }
 
