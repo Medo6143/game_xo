@@ -5,12 +5,11 @@
   margin: 0;
   box-sizing: border-box;
 }
-.container{
+.container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
-
 
 .game {
   width: 350px;
@@ -23,7 +22,6 @@
   border-radius: 15px;
   background-color: #02025e;
   margin: auto;
-  
 }
 
 body {
@@ -65,7 +63,6 @@ span {
   font-weight: bold;
   border-radius: 10px;
   box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);
-
 }
 
 @keyframes rotateX {
@@ -117,7 +114,6 @@ span {
   pointer-events: none;
 }
 
-
 footer {
   position: absolute;
   bottom: 0;
@@ -130,12 +126,11 @@ footer {
   font-weight: bolder;
 }
 
-#button{
+#button {
   text-align: center;
 }
 
-
-button{
+button {
   margin-top: 3rem;
   padding: 20px;
   border-radius: 8px;
@@ -149,31 +144,24 @@ button{
   width: 150px;
 }
 
-
 /* box-shawow */
 
-.shadow_x{
-    box-shadow:0 0 10px #004de8, 0 0 40px #004de8, 0 0 40px #004de8, 0 0 80px #004de8, 0 0 180px #004de8 ;
+.shadow_x {
+  box-shadow: 0 0 10px #004de8, 0 0 40px #004de8, 0 0 40px #004de8,
+    0 0 80px #004de8, 0 0 180px #004de8;
 }
 
-.shadow_o{
-  box-shadow: 0 0 10px #F56B93, 0 0 40px #F56B93, 0 0 40px #F56B93, 0 0 80px #F56B93, 0 0 180px #F56B93, 0 0 300px #F56B93;
+.shadow_o {
+  box-shadow: 0 0 10px #f56b93, 0 0 40px #f56b93, 0 0 40px #f56b93,
+    0 0 80px #f56b93, 0 0 180px #f56b93, 0 0 300px #f56b93;
 }
-
-
-
-
 
 /* style on mobile */
 
 @media only screen and (max-width: 600px) {
+ 
 
-
-  #line{
-    display: none;
-  }
-
-  #color_win{
+  #color_win {
     background-color: rgb(12, 12, 168);
   }
 }

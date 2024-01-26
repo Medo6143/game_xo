@@ -43,14 +43,21 @@ function check_winnner() {
     squarss[i] = document.getElementById("item" + i).innerHTML;
   }
 
-  if (
+ if (
     squarss[1] == squarss[2] &&
     squarss[2] == squarss[3] &&
     squarss[1] != ""
   ) {
     win(1, 2, 3);
     style_line.setAttribute("style","width: 340px; height: 4px; background-color: #fff; position: absolute; top: 29%")
-  } else if (
+    //on mobile
+    if(window.innerWidth<=600){
+      style_line.setAttribute("style","width: 340px; height: 4px; background-color: #fff; position: absolute; top: 31%")
+    }
+
+  } 
+  
+  else if (
     squarss[4] == squarss[5] &&
     squarss[5] == squarss[6] &&
     squarss[6] != ""
@@ -58,13 +65,25 @@ function check_winnner() {
     win(4, 5, 6);
     style_line.setAttribute("style","width: 340px; height: 4px; background-color: #fff; position: absolute; top: 43%")
 
-  } else if (
+        //on mobile
+        if(window.innerWidth<=600){
+          style_line.setAttribute("style","width: 340px; height: 4px; background-color: #fff; position: absolute; top: 46%")
+        }
+
+  } 
+  
+  else if (
     squarss[7] == squarss[8] &&
     squarss[8] == squarss[9] &&
     squarss[8] != ""
   ) {
     win(7, 8, 9);
     style_line.setAttribute("style","width: 340px; height: 4px; background-color: #fff; position: absolute; top: 57%")
+
+        //on mobile
+        if(window.innerWidth<=600){
+          style_line.setAttribute("style","width: 340px; height: 4px; background-color: #fff; position: absolute; top: 61%")
+        }
 
   }
   //check length
@@ -75,15 +94,29 @@ function check_winnner() {
   ) {
     win(1, 4, 7);
     style_line.setAttribute("style","width: 4px; height: 330px; background-color: #fff; position: absolute; right:57%; ")
-  } else if (
+
+        //on mobile
+        if(window.innerWidth<=600){
+          style_line.setAttribute("style","width: 4px; height: 330px; background-color: #fff; position: absolute; right:73%; ")
+        }
+  }
+  
+  else if (
     squarss[2] == squarss[5] &&
     squarss[5] == squarss[8] &&
     squarss[8] != ""
   ) {
     win(2, 5, 8);
     style_line.setAttribute("style","width: 4px; height: 310px; background-color: #fff; position: absolute; right:50%; ")
+    
+         //on mobile
+         if(window.innerWidth<=600){
+          style_line.setAttribute("style","width: 4px; height: 330px; background-color: #fff; position: absolute; right:50%; ")
+        }
 
-  } else if (
+  }
+  
+  else if (
     squarss[3] == squarss[6] &&
     squarss[6] == squarss[9] &&
     squarss[9] != ""
@@ -91,22 +124,40 @@ function check_winnner() {
     win(3, 6, 9);
     style_line.setAttribute("style","width: 4px; height: 330px; background-color: #fff; position: absolute; right:42.7%; ")
 
-  } else if (
+         //on mobile
+         if(window.innerWidth<=600){
+          style_line.setAttribute("style","width: 4px; height: 330px; background-color: #fff; position: absolute; right:27%;")
+        }
+
+  } 
+  
+  else if (
     squarss[3] == squarss[5] &&
     squarss[7] == squarss[5] &&
     squarss[5] != ""
   ) {
     win(3, 5, 7);
     style_line.setAttribute("style","width: 445px; height: 4px; background-color: #fff; position: absolute; top: 44%; left: 36%; transform: rotate(-45deg); text-align: center;")
-
-  } else if (
+           //on mobile
+           if(window.innerWidth<=600){
+            style_line.setAttribute("style","width: 445px; height: 4px; background-color: #fff; position: absolute; top: 46%; left: 5%; transform: rotate(-45deg); text-align: center;")
+          }
+  }
+  
+  else if (
     squarss[1] == squarss[5] &&
     squarss[9] == squarss[5] &&
     squarss[5] != ""
   ) {
     win(1, 5, 9);
     style_line.setAttribute("style","width: 445px; height: 4px; background-color: #fff; position: absolute; top: 44%; left: 36%; transform: rotate(45deg); text-align: center;")
-  }else{  
+           //on mobile
+           if(window.innerWidth<=600){
+            style_line.setAttribute("style","width: 445px; height: 4px; background-color: #fff; position: absolute; top: 46%; left: 4%; transform: rotate(45deg); text-align: center;")
+          }
+  }
+  
+  else{  
   // fair game 
   let isBoardFull = squarss.every(square => square !== "");
   if (isBoardFull) {
@@ -134,13 +185,6 @@ function win(nam1, nam2, nam3) {
   }
   tiitle.innerHTML = `${squarss[nam1]} winner`;
 
-  if(window.innerWidth<=600){
-    document.getElementById("item" + nam1).style.background = "rgb(12, 12, 168)";
-    document.getElementById("item" + nam2).style.background = "rgb(12, 12, 168)";
-    document.getElementById("item" + nam3).style.background = "rgb(12, 12, 168)";
-  }
-
-
     
 // squar disable
   for (let i = 1; i < 10; i++) {
@@ -152,7 +196,6 @@ function win(nam1, nam2, nam3) {
 
   
 }
-
 
 
 
