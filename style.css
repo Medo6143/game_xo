@@ -165,3 +165,41 @@ button {
     background-color: rgb(12, 12, 168);
   }
 }
+
+
+.end{
+  width: 200px;
+  height: 200px;
+  background-color: #f0f0f0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #350ba7;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid brown;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  opacity: 100%;
+  
+
+  h2{
+    font-size: 20px;
+    font-weight: bold ;
+    color: #ddd;
+  }
+
+  button {
+    border: none;
+    width: 100px;
+    height: 50px;;
+    align-items: center;
+    padding: 0;
+  }
+}
+
+.none{
+  opacity: 30%;
+}

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Game XO </title>
 </head>
-<body>
+<body >
     <div class="title"> GAME<span>X O</span></div>
     <div class="result">
         
@@ -18,7 +18,7 @@
         <p>Player O:<span id="playerO">0</span></p>
     </div>
     <div class="container">
-        <div class="game">
+        <div class="game ">
             
             <div class="squar" id="item1" onclick="game(this.id)"></div>
             <div class="squar" id="item2" onclick="game(this.id)"></div>
@@ -34,12 +34,19 @@
 
         </div>
         <div id="button">
-            <button onclick="restart()">RESTART</button>
+            <button onclick="resetGame(true)" id="buttn">RESTART</button>
         </div>
+
+       
     </div>
     <footer>
         <p> @Project Odin</p>
     </footer>
+
+    <div class="end">
+        <h2>Congratulations <span id="winner"></span></h2>
+        <button onclick="newGame()">New Game</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
