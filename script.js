@@ -4,15 +4,15 @@ let player_X = 0;
 let player_O = 0;
 let squarss = [];
 
-// reset time 
+// reset time
 let resetTimeout = 0;
 
 // CONSTANTS
-const O_TURN = 'o';
-const X_TURN = 'x';
+const O_TURN = "o";
+const X_TURN = "x";
 
-const TURN_X_TITLE = 'Turn {X}';
-const TURN_O_TITLE = 'Turn {O}';
+const TURN_X_TITLE = "Turn {X}";
+const TURN_O_TITLE = "Turn {O}";
 
 // creat the line
 const line = document.createElement("div");
@@ -22,7 +22,6 @@ document.querySelector(".game").appendChild(line);
 let style_line = document.querySelector(".line");
 
 // the game
-
 
 function updateSquare(square, value) {
   square.innerHTML = value;
@@ -45,7 +44,6 @@ function game(id) {
 
     turn = O_TURN;
     updateTurnTitle(TURN_O_TITLE);
-
   } else if (turn === O_TURN && squar.innerHTML == "") {
     updateSquare(squar, O_TURN);
 
@@ -87,7 +85,6 @@ function check_winnner() {
         "width: 340px; height: 4px; background-color: #fff; position: absolute; top: 35%"
       );
     }
-
   } else if (
     squarss[4] == squarss[5] &&
     squarss[5] == squarss[6] &&
@@ -106,7 +103,6 @@ function check_winnner() {
         "width: 340px; height: 4px; background-color: #fff; position: absolute; top: 40%"
       );
     }
-
   } else if (
     squarss[7] == squarss[8] &&
     squarss[8] == squarss[9] &&
@@ -117,7 +113,6 @@ function check_winnner() {
       "style",
       "width: 340px; height: 4px; background-color: #fff; position: absolute; top: 57%"
     );
-
 
     //on mobile
     if (window.innerWidth <= 600) {
@@ -227,16 +222,13 @@ function check_winnner() {
   }
 }
 
-
-
-
-  // squar disable
-  function disableSquar(){
-    for (let i = 1; i < 10; i++) {
-      squarss[i] = document.getElementById("item" + i).innerHTML;
-      document.getElementById("item" + i).classList.add("disabled-square");
-    }
-   }
+// squar disable
+function disableSquar() {
+  for (let i = 1; i < 10; i++) {
+    squarss[i] = document.getElementById("item" + i).innerHTML;
+    document.getElementById("item" + i).classList.add("disabled-square");
+  }
+}
 
 //who is win
 
@@ -254,21 +246,17 @@ function win(nam1) {
   }
   tiitle.innerHTML = `${squarss[nam1]} winner`;
 
-
-
- disableSquar()
+  disableSquar();
   resetTimeout = setTimeout(resetGame, 1000);
 
   // check score game
-  checkGame(nam1)
+  checkGame(nam1);
 }
 
 function resetGame(isButton) {
-
   if (isButton) {
     player_X = 0;
     player_O = 0;
-
   }
   document.querySelector("#playerO").innerHTML = player_O;
   document.querySelector("#playerX").innerHTML = player_X;
@@ -287,40 +275,30 @@ function resetGame(isButton) {
   clearTimeout(resetTimeout);
 }
 
-// score Game 
-
-
+// score Game
 
 function checkGame(nam1) {
-
-  if (player_O ===5 || player_X === 5) {
+  if (player_O === 5 || player_X === 5) {
     if (squarss[nam1] == "x") {
-        document.querySelector(".end").style.display = "flex"
-        document.querySelector("#winner").textContent="X"
-        document.querySelector("#buttn").classList.add("disabled-square")
-        clearTimeout(resetTimeout);
-        document.querySelector(".container").classList.add("none")
-        
-
-    }
-    else {
-      document.querySelector(".end").style.display = "flex"
-      document.querySelector("#winner").textContent="O"
-      document.querySelector("#buttn").classList.add("disabled-square")
+      document.querySelector(".end").style.display = "flex";
+      document.querySelector("#winner").textContent = "X";
+      document.querySelector("#buttn").classList.add("disabled-square");
+      clearTimeout(resetTimeout);
+      document.querySelector(".container").classList.add("none");
+    } else {
+      document.querySelector(".end").style.display = "flex";
+      document.querySelector("#winner").textContent = "O";
+      document.querySelector("#buttn").classList.add("disabled-square");
       clearTimeout(resetTimeout);
 
-      document.querySelector(".container").classList.add("none")
-
+      document.querySelector(".container").classList.add("none");
     }
   }
 }
 
-
-
-
-function newGame (){
-  resetGame(true)
-  document.querySelector(".end").style.display = "none"
-  document.querySelector("#buttn").classList.remove("disabled-square")
-  document.querySelector(".container").classList.remove("none")
+function newGame() {
+  resetGame(true);
+  document.querySelector(".end").style.display = "none";
+  document.querySelector("#buttn").classList.remove("disabled-square");
+  document.querySelector(".container").classList.remove("none");
 }

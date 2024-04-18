@@ -5,6 +5,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -69,6 +70,7 @@ span {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -159,7 +161,7 @@ button {
 /* style on mobile */
 
 @media only screen and (max-width: 600px) {
- 
+
 
   #color_win {
     background-color: rgb(12, 12, 168);
@@ -167,7 +169,7 @@ button {
 }
 
 
-.end{
+.end {
   width: 200px;
   height: 200px;
   background-color: #f0f0f0;
@@ -183,23 +185,24 @@ button {
   border: 2px solid brown;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   opacity: 100%;
-  
 
-  h2{
+
+  h2 {
     font-size: 20px;
-    font-weight: bold ;
+    font-weight: bold;
     color: #ddd;
   }
 
   button {
     border: none;
     width: 100px;
-    height: 50px;;
+    height: 50px;
+    ;
     align-items: center;
     padding: 0;
   }
 }
 
-.none{
+.none {
   opacity: 30%;
 }
