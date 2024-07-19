@@ -100,7 +100,7 @@ function check_winnner() {
     if (window.innerWidth <= 600) {
       style_line.setAttribute(
         "style",
-        "width: 340px; height: 4px; background-color: #fff; position: absolute; top: 40%"
+        "width: 340px; height: 4px; background-color: #fff; position: absolute; top: 50%"
       );
     }
   } else if (
@@ -118,7 +118,7 @@ function check_winnner() {
     if (window.innerWidth <= 600) {
       style_line.setAttribute(
         "style",
-        "width: 340px; height: 4px; background-color: #fff; position: absolute; top: 52.5%"
+        "width: 340px; height: 4px; background-color: #fff; position: absolute; top: 65%"
       );
     }
   }
@@ -175,7 +175,7 @@ function check_winnner() {
     if (window.innerWidth <= 600) {
       style_line.setAttribute(
         "style",
-        "width: 4px; height: 330px; background-color: #fff; position: absolute; right:22%;"
+        "width: 4px; height: 330px; background-color: #fff; position: absolute; right:25%;"
       );
     }
   } else if (
@@ -192,7 +192,7 @@ function check_winnner() {
     if (window.innerWidth <= 600) {
       style_line.setAttribute(
         "style",
-        "width: 430px; height: 4px; background-color: #fff; position: absolute; top: 38%; left: 0%; transform: rotate(-45deg); text-align: center;"
+        "width: 410px; height: 4px; background-color: #fff; position: absolute; top: 47%; left: 2%; transform: rotate(-45deg); text-align: center;"
       );
     }
   } else if (
@@ -209,7 +209,7 @@ function check_winnner() {
     if (window.innerWidth <= 600) {
       style_line.setAttribute(
         "style",
-        "width: 430px; height: 4px; background-color: #fff; position: absolute; top: 40%; left: 0%; transform: rotate(45deg); text-align: center;"
+        "width: 410px; height: 4px; background-color: #fff; position: absolute; top: 55%; left: 0%; transform: rotate(45deg); "
       );
     }
   } else {
